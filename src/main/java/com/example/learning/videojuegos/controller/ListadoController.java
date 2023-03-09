@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.learning.videojuegos.domain.Videojuego;
+import com.example.learning.videojuegos.domain.Videojuegos;
 import com.example.learning.videojuegos.service.VideojuegoService;
 
 @Controller
@@ -24,7 +24,7 @@ public class ListadoController {
 
     @RequestMapping("/")
     public String listarVideojuegos(Model model){
-        List<Videojuego> destacados = videojuegoService.buscarDestacados();
+        List<Videojuegos> destacados = videojuegoService.buscarDestacados();
         model.addAttribute("videojuegos", destacados);
         return "listado";
     }
