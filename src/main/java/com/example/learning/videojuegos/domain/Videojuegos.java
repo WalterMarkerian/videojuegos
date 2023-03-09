@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name = "Videojuegos")
@@ -16,8 +20,12 @@ public class Videojuegos {
     private String nombre;
     private String descripcion;
 
-    @Column(name = "imagen_url")
+    @Column(name="imagen_url")
     private String imagenUrl;
+
+    @ManyToOne
+    @JoinColumn(name="distribuidor_id")
+    private Distribuidor distribuidor;
 
     public Integer getId() {
         return id;
@@ -50,8 +58,21 @@ public class Videojuegos {
     public void setImagenUrl(String imagenUrl) {
         this.imagenUrl = imagenUrl;
     }
-    
+
+    public Distribuidor getDistribuidor() {
+        return distribuidor;
+    }
+
+    public void setDistribuidor(Distribuidor distribuidor) {
+        this.distribuidor = distribuidor;
+    }
+
+    @Override
+    public String toString() {
+        return "Videojuegos [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagenUrl="
+                + imagenUrl + ", distribuidor=" + distribuidor + "]";
+    }
 
     
-
+    
 }
