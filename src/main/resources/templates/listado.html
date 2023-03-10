@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <h5 th:text="${juego.nombre}" class="card-title"></h5>
                         <p>
-                            <span class="badge badge-pill badge-warning" th:text="${juego.distribuidor.nombre}"></span>
+                            <a th:href="@{/videojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id})}" class="badge badge-pill badge-warning" th:text="${juego.distribuidor.nombre}"></a>
                         </p>
                         <p th:text="${juego.descripcion}" class="card-text"></p>
                     </div>
