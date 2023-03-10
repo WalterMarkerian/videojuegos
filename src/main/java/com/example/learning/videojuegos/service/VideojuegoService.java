@@ -26,5 +26,8 @@ public class VideojuegoService {
         return videojuegoRepository.buscarPorDistribuidor(distribuidorId);
     }
 
+    public List<Videojuegos> buscar(String consulta){
+        return videojuegoRepository.findByNombreContaining(consulta);
+    }
     
 }

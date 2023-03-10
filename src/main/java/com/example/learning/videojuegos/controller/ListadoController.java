@@ -31,12 +31,16 @@ public class ListadoController {
 
     @RequestMapping("/videojuegosPorDistribuidor")
     public String listarVideojuegosPorDistribuidor(Integer distribuidorId, Model model){
-        System.out.println("esto:" +distribuidorId);
-
         List<Videojuegos> juegos = videojuegoService.buscarPorDistribuidor(distribuidorId);
         model.addAttribute("videojuegos", juegos);
-        System.out.println("esto:" +distribuidorId);
         return "listado";
     }
     
+    @RequestMapping("/buscar")
+    public String buscar(String consulta, Model model){
+        List<Videojuegos> juegos = videojuegoService.buscar(consulta);
+        model.addAttribute("videojuegos", juegos);
+        return "listado";
+    }
+
 }

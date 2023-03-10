@@ -20,7 +20,12 @@ insert into Videojuegos
 ('Braid', 'Some quick example text to build on the card title and make up the bulk of the cards content.', 'https://upload.wikimedia.org/wikipedia/en/6/6a/Braidlogo.jpg');
 
 
-select * from videojuegos;
+insert into Videojuegos
+(nombre, descripcion, imagen_url, distribuidor_id) values
+('Borderlands', 'Some quick example text to build on the card title and make up the bulk of the cards content.', 'https://image.api.playstation.com/vulcan/ap/rnd/202010/2323/p50N4PBK9rNanGYKFecTvac5.png',1);
+
+
+select * from Videojuegos;
 
 create table Distribuidor (
 	id int primary key auto_increment,
