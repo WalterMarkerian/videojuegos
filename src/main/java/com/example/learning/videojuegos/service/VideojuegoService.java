@@ -18,6 +18,13 @@ public class VideojuegoService {
 
     public List<Videojuegos> buscarDestacados() {
         
-        return videojuegoRepository.findAll();
+        return videojuegoRepository.buscarTodos();
     }
+    
+    public List<Videojuegos> buscarPorDistribuidor(Integer distribuidorId) {
+        
+        return videojuegoRepository.buscarPorDistribuidor(distribuidorId);
+    }
+
+    
 }
