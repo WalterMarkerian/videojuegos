@@ -70,7 +70,7 @@ public class Videojuegos {
     @Override
     public String toString() {
         return "Videojuegos [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagenUrl="
-                + imagenUrl + ", distribuidor=" + distribuidor + "]";
+                + imagenUrl + ", distribuidor=" + distribuidor.getId() + "]";
     }
 
     
